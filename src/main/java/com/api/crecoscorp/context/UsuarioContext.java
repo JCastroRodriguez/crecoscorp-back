@@ -16,6 +16,8 @@ public class UsuarioContext {
 
     private String correo;
 
+    private Integer genero;
+
     private Integer idPerfil;
 
     private String nombrePerfil;
@@ -30,6 +32,7 @@ public class UsuarioContext {
         String claveUsuario,
         String celular,
         String correo,
+        Integer genero,
         Integer idPerfil,
         String nombrePerfil,
         Integer estado,
@@ -40,6 +43,7 @@ public class UsuarioContext {
         this.claveUsuario = claveUsuario;
         this.celular = celular;
         this.correo = correo;
+        this.genero = genero;
         this.idPerfil = idPerfil;
         this.nombrePerfil = nombrePerfil;
         this.estado = estado;

@@ -24,11 +24,15 @@ public class UsuarioService {
         return usuarioRepository.save(usuarioModel);
     }
 
-    public Optional<UsuarioModel> getById(Long id){
-        return usuarioRepository.findById(id); 
+    public Optional<UsuarioContext> getById(Long id){
+        return usuarioRepository.getUsuarioById(id); 
     }
 
     public List<UsuarioContext> getUsuarioAll(){
         return usuarioRepository.getUsuarioAll(); 
     }
+
+    /*public Optional<UsuarioModel> getByIdN(Long id){
+        return usuarioRepository.findById(id); 
+    }*/
 }

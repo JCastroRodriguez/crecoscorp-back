@@ -36,6 +36,9 @@ public class UsuarioModel {
     @Column(name = "CORREO")
     private String correo;
 
+    @Column(name = "GENERO")
+    private Integer genero;
+
     @Column(name = "ID_PERFIL")
     private Integer idPerfil;
 

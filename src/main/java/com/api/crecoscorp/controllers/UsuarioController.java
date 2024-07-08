@@ -50,10 +50,11 @@ public class UsuarioController {
         return usuarioService.guardarUsuario(usuario);
     }
 
-    @GetMapping("/{id}")
+    /*@GetMapping("/{id}")
     public Optional<UsuarioModel> getUsuarioById(@PathVariable Long id) {
-        return usuarioService.getById(id);
-    }
+        //return usuarioService.getById(id);
+        return usuarioService.getByIdN(id);
+    }*/
 
     @GetMapping("/all")
     public ResponseEntity<ResponseData<List<UsuarioContext>>> getPerfilAll() {
@@ -67,6 +68,21 @@ public class UsuarioController {
             usuarios = null;
             String mensajeError = "Ocurrió un error";
             ResponseData<List<UsuarioContext>> responseError = new ResponseData<>(usuarios, mensajeError, 400);
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(responseError);
+        }
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<ResponseData<Optional<UsuarioContext>>> getUsuarioById(@PathVariable Long id) {
+        try {
+            Optional<UsuarioContext> usuario = usuarioService.getById(id);
+            String mensajeError = "Proceso correcto";
+            ResponseData<Optional<UsuarioContext>> responseData = new ResponseData<>(usuario, mensajeError, 200);
+            return ResponseEntity.ok().body(responseData);
+        } catch (Exception e) {
+            Optional<UsuarioContext> usuario = null;
+            String mensajeError = "Ocurrió un error";
+            ResponseData<Optional<UsuarioContext>> responseError = new ResponseData<>(usuario, mensajeError, 400);
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(responseError);
         }
     }

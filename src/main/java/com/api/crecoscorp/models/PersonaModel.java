@@ -39,8 +39,8 @@ public class PersonaModel {
     @Column(name = "CELULAR")
     private String celular;
 
-    @Column(name = "TELEFONO")
-    private String telefono;
+    @Column(name = "GENERO")
+    private Integer genero;
 
     @Column(name = "CORREO")
     private String correo;
