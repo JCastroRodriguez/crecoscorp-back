@@ -24,6 +24,9 @@ public class PersonaModel {
     @Column(name = "ID_PERSONA")
     private Long id;
 
+    @Column(name = "ID_USUARIO")
+    private Integer idUsuario;
+
     @Column(name = "NOMBRE_PERSONA")
     private String nombrePersona;
 
@@ -58,7 +61,7 @@ public class PersonaModel {
     private String longitud;
 
     @Column(name = "DIRECCION_DOMICILIO")
-    private Integer direccionDomicilio;
+    private String direccionDomicilio;
 
     @Column(name = "REFERENCIA_DOMICILIO")
     private String referenciaDomicilio;

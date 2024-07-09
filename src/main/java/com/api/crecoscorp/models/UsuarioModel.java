@@ -24,6 +24,9 @@ public class UsuarioModel {
     @Column(name = "id_usuario")
     private Long id;
 
+    @Column(name = "ID_PERFIL")
+    private Integer idPerfil;
+
     @Column(name = "NOMBRE_USUARIO")
     private String nombreUsuario;
 
@@ -38,9 +41,6 @@ public class UsuarioModel {
 
     @Column(name = "GENERO")
     private Integer genero;
-
-    @Column(name = "ID_PERFIL")
-    private Integer idPerfil;
 
     @Column(name = "ESTADO")
     private Integer estado;
