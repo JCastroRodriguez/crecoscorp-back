@@ -1,12 +1,9 @@
 package com.api.crecoscorp.repositories;
 
 import java.util.Optional;
-
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
-
-import com.api.crecoscorp.context.UsuarioContext;
 import com.api.crecoscorp.models.PersonaModel;
 
 @Repository
@@ -20,7 +17,7 @@ public interface IPersonaRepository extends JpaRepository<PersonaModel, Long>{
      */
     @Query(value = " SELECT p FROM PersonaModel p " +
         "   INNER JOIN UsuarioModel u ON u.id = p.idUsuario " +
-        "   WHERE u.idPerfil = 1 AND p.identificacion=?1 ")
+        "   WHERE u.idPerfil = 3 AND p.identificacion=?1 ")
     Optional<PersonaModel> getSolicitanteByIdentificacion(String identificacion);
 
     /**
@@ -31,7 +28,7 @@ public interface IPersonaRepository extends JpaRepository<PersonaModel, Long>{
      */
     @Query(value = " SELECT p FROM PersonaModel p " +
         "   INNER JOIN UsuarioModel u ON u.id = p.idUsuario " +
-        "   WHERE u.idPerfil = 1 AND p.celular=?1 ")
+        "   WHERE u.idPerfil = 3 AND p.celular=?1 ")
     Optional<PersonaModel> getSolicitanteByCelular(String celular);
 
     /**
@@ -42,7 +39,7 @@ public interface IPersonaRepository extends JpaRepository<PersonaModel, Long>{
      */
     @Query(value = " SELECT p FROM PersonaModel p " +
         "   INNER JOIN UsuarioModel u ON u.id = p.idUsuario " +
-        "   WHERE u.idPerfil = 1 AND p.correo=?1 ")
+        "   WHERE u.idPerfil = 3 AND p.correo=?1 ")
     Optional<PersonaModel> getSolicitanteByEmail(String email);
     
 }
